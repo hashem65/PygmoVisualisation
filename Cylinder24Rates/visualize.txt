@@ -1,0 +1,60 @@
+#Read in solution
+ 
+gfx read node HeartTubeGrowth_Undeformed.part0.exnode time 0
+gfx read node HeartTubeGrowth_deformed.part0.exnode time 1
+gfx read elem HeartTubeGrowth_Undeformed.part0.exelem
+ 
+#gfx read element HeartTubeGrowth.part0.exelem
+gfx define faces egroup "HeartTubeRegion"
+ 
+ 
+gfx read node HeartTubeGrowth_target.part0.exnode region firstLayer
+gfx read elem HeartTubeGrowth_target.part0.exelem region firstLayer
+gfx define faces egroup firstLayer
+ 
+ 
+#gfx read node mesh22-8x8.part0.exnode region seconslayer
+#gfx read elem mesh22-8x8.part0.exelem region seconslayer
+#gfx define faces egroup seconslayer
+ 
+ 
+ 
+#gfx read node mesh23-8x8.part0.exnode region three
+#gfx read elem mesh23-8x8.part0.exelem region three
+#gfx define faces egroup three
+ 
+ 
+#gfx read node mesh24-8x8.part0.exnode region final
+#gfx read elem mesh24-8x8.part0.exelem region final
+#gfx define faces egroup final
+ 
+ 
+#Display deformed geometry
+gfx modify g_element "HeartTubeRegion" surfaces domain_mesh2d coordinate Geometry face all tessellation default LOCAL select_on material green selected_material default_selected render_shaded;
+gfx modify g_element "HeartTubeRegion" lines coordinate Geometry select_on material blue line_width 1
+gfx modify g_element "HeartTubeRegion" node_points coordinate Geometry glyph sphere General size "0.05*0.05*0.05" centre 0,0,0 font default select_on material default
+ 
+#Display target geometry
+gfx modify g_element firstLayer surfaces domain_mesh2d coordinate Geometry face all tessellation default LOCAL select_on material red selected_material default_selected render_wireframe;
+gfx modify g_element firstLayer lines coordinate Geometry select_on material red line_width 1
+gfx modify g_element "firstLayer" node_points coordinate Geometry glyph sphere General size "0.05*0.05*0.05" centre 0,0,0 font default select_on material default
+ 
+ 
+ 
+ 
+ 
+ 
+#Create windows
+gfx create window 1
+gfx modify window 1 background colour 1 1 1
+gfx modify window 1 set antialias 2
+gfx modify window 1 view interest_point -3.0,-1.9,3.4 eye_point 21.0,-13.0,27.0 up_vector -0.56,0.37,0.74 view_angle 40 near_clipping_plane 0.15 far_clipping_plane 55.0
+ 
+ 
+# set high tessellation quality
+gfx define tessellation default minimum_divisions "10" refinement_factors "1";
+gfx define tessellation default_points minimum_divisions "2" refinement_factors "1";
+ 
+ 
+gfx cre time_editor
+gfx edit scene
