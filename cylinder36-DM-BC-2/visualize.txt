@@ -4,6 +4,8 @@ gfx read node HeartTubeGrowth_Undeformed.part0.exnode time 0
 gfx read node HeartTubeGrowth_deformed.part188.exnode time 1
 gfx read node HeartTubeGrowth_deformed.part97.exnode time 2
 gfx read node HeartTubeGrowth_deformed.part71.exnode time 3
+gfx read node HeartTubeGrowth_deformed.part56.exnode time 4
+gfx read node HeartTubeGrowth_deformed.part46.exnode time 5
 gfx read elem HeartTubeGrowth_Undeformed.part0.exelem
  
 #gfx read element HeartTubeGrowth.part0.exelem
