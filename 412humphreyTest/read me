@@ -1,0 +1,61 @@
+The explanation of the rates 
+
+
+
+        c1 = 3.2
+        c2 = 0.39
+
+        c3 = 11.0
+        c4 = 0.49
+=============================================================================
+time 1 
+        growthParameters[0,:] = 0.0,0.19,0.0
+        growthParameters[1,:] = 0.0,0.19,0.0
+        growthParameters[2,:] = 0.0,-0.21,0.0
+        growthParameters[3,:] = 0.0,-0.21,0.0	
+        growthParameters[4,:] = 0.0,0.19,0.0
+        growthParameters[5,:] = 0.0,0.19,0.0
+        growthParameters[6,:] = 0.0,0.0,0.0
+        growthParameters[7,:] = 0.0,0.0,0.0
+=============================================================================
+time 2 
+
+        # growthParameters[0,:] = 0.0,0.29,-0.20
+        # growthParameters[1,:] = 0.0,0.29,-0.20
+        # growthParameters[2,:] = 0.0,-0.31,0.3
+        # growthParameters[3,:] = 0.0,-0.31,0.3	
+        # growthParameters[4,:] = 0.2,0.19,0.0
+        # growthParameters[5,:] = 0.2,0.19,0.0
+        # growthParameters[6,:] = 0.2,0.0,0.15
+        # growthParameters[7,:] = 0.2,0.0,0.15
+
+=============================================================================
+
+
+time 3 with Error 
+
+>>ERROR:  1: Nonlinear line search solver did not converge. PETSc diverged line search.
+>>  SOLVER_NEWTON_LINESEARCH_SOLVE
+>>    SOLVER_NEWTON_SOLVE
+>>      SOLVER_NONLINEAR_SOLVE
+>>        SOLVER_SOLVE
+>>          Problem_SolverEquationsQuasistaticNonlinearSolve
+>>            PROBLEM_SOLVER_EQUATIONS_SOLVE
+>>              Problem_SolverSolve
+>>                PROBLEM_CONTROL_LOOP_SOLVE
+>>                  PROBLEM_SOLVE
+>>                    cmfe_Problem_SolveObj
+Traceback (most recent call last):
+  File "Driver.py", line 62, in findDeformedCoordinates
+    raise ValueError(result[u'error'])
+
+
+        growthParameters[0,:] = -0.2,0.29,-0.20
+        growthParameters[1,:] = 0.0,0.29,-0.20
+        growthParameters[2,:] = 0.0,-0.31,0.3
+        growthParameters[3,:] = -0.2,-0.31,-0.3	
+        growthParameters[4,:] = 0.0,0.19,0.0
+        growthParameters[5,:] = 0.0,0.19,0.0
+        growthParameters[6,:] = 0.2,0.0,0.15
+        growthParameters[7,:] = 0.2,0.0,0.15
+
